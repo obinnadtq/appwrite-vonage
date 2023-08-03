@@ -20,7 +20,10 @@ const SignupForm = () => {
         setUserId(user['userId'])
       })
       event.preventDefault();
-      setIsVerificationSent(true);
+      alert("verification code has been sent");
+      setTimeout(() => {
+        setIsVerificationSent(true);
+      }, "1000");
     }
     catch (e) {
       console.log("error while creating phone session", e);
@@ -35,7 +38,7 @@ const SignupForm = () => {
             <label style={{ marginRight: "10px" }}>
               Phone Number:
             </label>
-            <input type="text" name="phoneNumber" value={phoneNumber} onChange={handlePhoneNumberChange} style={{ width: "150px" }} required />
+            <input type="password" name="phoneNumber" value={phoneNumber} onChange={handlePhoneNumberChange} style={{ width: "150px" }} required />
           </div>
           <div style={{ textAlign: "center", marginTop: "20px" }}>
             <input type="submit" value="Get Code" style={{ width: "100px" }} />
